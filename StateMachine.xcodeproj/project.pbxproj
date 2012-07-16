@@ -34,6 +34,7 @@
 		200683B815AB30B9001F9A45 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SMViewController.xib; sourceTree = "<group>"; };
 		200683BF15AB333D001F9A45 /* OAStateMachine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAStateMachine.h; sourceTree = "<group>"; };
 		200683C015AB333D001F9A45 /* OAStateMachine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OAStateMachine.m; sourceTree = "<group>"; };
+		202B81DB15B46DEA00D6303B /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +54,7 @@
 		2006839315AB30B9001F9A45 = {
 			isa = PBXGroup;
 			children = (
+				202B81DB15B46DEA00D6303B /* README */,
 				200683A815AB30B9001F9A45 /* StateMachine */,
 				200683A115AB30B9001F9A45 /* Frameworks */,
 				2006839F15AB30B9001F9A45 /* Products */,
@@ -279,6 +281,7 @@
 				200683BE15AB30B9001F9A45 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
