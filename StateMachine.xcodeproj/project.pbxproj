@@ -15,6 +15,7 @@
 		200683B315AB30B9001F9A45 /* SMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 200683B215AB30B9001F9A45 /* SMAppDelegate.m */; };
 		200683B615AB30B9001F9A45 /* SMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 200683B515AB30B9001F9A45 /* SMViewController.m */; };
 		200683B915AB30B9001F9A45 /* SMViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 200683B715AB30B9001F9A45 /* SMViewController.xib */; };
+		200683C115AB333D001F9A45 /* OAStateMachine.m in Sources */ = {isa = PBXBuildFile; fileRef = 200683C015AB333D001F9A45 /* OAStateMachine.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,15 +23,17 @@
 		200683A215AB30B9001F9A45 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		200683A415AB30B9001F9A45 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		200683A615AB30B9001F9A45 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		200683AA15AB30B9001F9A45 /* StateMachine-Info.plist */ = {isa = PBXFileReference; path = "StateMachine-Info.plist"; sourceTree = "<group>"; };
+		200683AA15AB30B9001F9A45 /* StateMachine-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "StateMachine-Info.plist"; sourceTree = "<group>"; };
 		200683AC15AB30B9001F9A45 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		200683AE15AB30B9001F9A45 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		200683B015AB30B9001F9A45 /* StateMachine-Prefix.pch */ = {isa = PBXFileReference; path = "StateMachine-Prefix.pch"; sourceTree = "<group>"; };
-		200683B115AB30B9001F9A45 /* SMAppDelegate.h */ = {isa = PBXFileReference; path = SMAppDelegate.h; sourceTree = "<group>"; };
+		200683B015AB30B9001F9A45 /* StateMachine-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "StateMachine-Prefix.pch"; sourceTree = "<group>"; };
+		200683B115AB30B9001F9A45 /* SMAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMAppDelegate.h; sourceTree = "<group>"; };
 		200683B215AB30B9001F9A45 /* SMAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMAppDelegate.m; sourceTree = "<group>"; };
-		200683B415AB30B9001F9A45 /* SMViewController.h */ = {isa = PBXFileReference; path = SMViewController.h; sourceTree = "<group>"; };
+		200683B415AB30B9001F9A45 /* SMViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMViewController.h; sourceTree = "<group>"; };
 		200683B515AB30B9001F9A45 /* SMViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMViewController.m; sourceTree = "<group>"; };
 		200683B815AB30B9001F9A45 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SMViewController.xib; sourceTree = "<group>"; };
+		200683BF15AB333D001F9A45 /* OAStateMachine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAStateMachine.h; sourceTree = "<group>"; };
+		200683C015AB333D001F9A45 /* OAStateMachine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OAStateMachine.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +80,8 @@
 		200683A815AB30B9001F9A45 /* StateMachine */ = {
 			isa = PBXGroup;
 			children = (
+				200683BF15AB333D001F9A45 /* OAStateMachine.h */,
+				200683C015AB333D001F9A45 /* OAStateMachine.m */,
 				200683B115AB30B9001F9A45 /* SMAppDelegate.h */,
 				200683B215AB30B9001F9A45 /* SMAppDelegate.m */,
 				200683B415AB30B9001F9A45 /* SMViewController.h */,
@@ -164,6 +169,7 @@
 				200683AF15AB30B9001F9A45 /* main.m in Sources */,
 				200683B315AB30B9001F9A45 /* SMAppDelegate.m in Sources */,
 				200683B615AB30B9001F9A45 /* SMViewController.m in Sources */,
+				200683C115AB333D001F9A45 /* OAStateMachine.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

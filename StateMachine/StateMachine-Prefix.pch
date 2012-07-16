@@ -11,4 +11,7 @@
 #ifdef __OBJC__
 	#import <UIKit/UIKit.h>
 	#import <Foundation/Foundation.h>
+	
+	#define OA_STATE_MACHINE_LOG_MISSED_CALLBACKS 1
+
 #endif
