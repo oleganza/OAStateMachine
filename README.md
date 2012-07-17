@@ -1,7 +1,7 @@
 
 
-OAStateMachine
-==============
+OAStateMachine (work in progress)
+=================================
 
 Provides state machine functionality with support of animated transitions and nested states.
 It *does not require* a static definition of possible states and a matrix of transitions.

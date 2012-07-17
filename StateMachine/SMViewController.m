@@ -119,7 +119,7 @@
 
 - (void) didEnterReady
 {
-	[self.beginLoadingButton setEnabled:YES];
+	[self.beginLoadingButton setEnabled:NO];
 	[self.finishLoadingButton setEnabled:NO];
 	[self.failedLoadingButton setEnabled:NO];
 	
@@ -129,7 +129,12 @@
 
 - (void) didEnterBuying
 {
-	
+	self.finishBuyingButton.enabled = YES;
+}
+
+- (void) willExitBuying
+{
+	self.finishBuyingButton.enabled = YES;
 }
 
 
@@ -184,7 +189,8 @@
 }
 
 - (IBAction)finishBuying:(id)sender {
-	[self.stateMachine transitionToState:@"buying"];
+	[self.stateMachine transitionToState:@"idle"];
+	[[[[UIAlertView alloc] initWithTitle:@"Thank you!" message:nil delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] autorelease] show];
 }
 
 - (IBAction)cancel:(id)sender {
