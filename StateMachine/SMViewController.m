@@ -124,6 +124,7 @@
 	[self.failedLoadingButton setEnabled:NO];
 	
 	// Here we can use another state machine for buying and transition to "BuyingReady" state.
+	// Or we can just use nested states.
 	[self.startBuyingButton setEnabled:YES];
 }
 
@@ -153,7 +154,7 @@
 {
 	NSLog(@"VC: did enter '%@' animated:%@", stateName, animated ? @"YES" : @"NO");
 	
-	_stateLabel.text = [_stateMachine.currentState componentsJoinedByString:@" -> "];
+	_stateLabel.text = [_stateMachine.currentState componentsJoinedByString:@" ⊂ "];
 	if (animated)
 	{
 		_stateLabel.alpha = 0;
@@ -185,7 +186,7 @@
 }
 
 - (IBAction)startBuying:(id)sender {
-	[self.stateMachine transitionToState:@"buying" animated:YES];
+	[self.stateMachine transitionToState:[NSArray arrayWithObjects:@"ready", @"buying", nil] animated:YES];
 }
 
 - (IBAction)finishBuying:(id)sender {
