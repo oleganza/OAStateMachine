@@ -119,17 +119,23 @@
 
 - (void) didEnterReady
 {
-	[self.beginLoadingButton setEnabled:YES];
+	[self.beginLoadingButton setEnabled:NO];
 	[self.finishLoadingButton setEnabled:NO];
 	[self.failedLoadingButton setEnabled:NO];
 	
 	// Here we can use another state machine for buying and transition to "BuyingReady" state.
+	// Or we can just use nested states.
 	[self.startBuyingButton setEnabled:YES];
 }
 
 - (void) didEnterBuying
 {
-	
+	self.finishBuyingButton.enabled = YES;
+}
+
+- (void) willExitBuying
+{
+	self.finishBuyingButton.enabled = YES;
 }
 
 
@@ -148,7 +154,7 @@
 {
 	NSLog(@"VC: did enter '%@' animated:%@", stateName, animated ? @"YES" : @"NO");
 	
-	_stateLabel.text = [_stateMachine.currentState componentsJoinedByString:@" -> "];
+	_stateLabel.text = [_stateMachine.currentState componentsJoinedByString:@" ⊂ "];
 	if (animated)
 	{
 		_stateLabel.alpha = 0;
@@ -180,11 +186,12 @@
 }
 
 - (IBAction)startBuying:(id)sender {
-	[self.stateMachine transitionToState:@"buying" animated:YES];
+	[self.stateMachine transitionToState:[NSArray arrayWithObjects:@"ready", @"buying", nil] animated:YES];
 }
 
 - (IBAction)finishBuying:(id)sender {
-	[self.stateMachine transitionToState:@"buying"];
+	[self.stateMachine transitionToState:@"idle"];
+	[[[[UIAlertView alloc] initWithTitle:@"Thank you!" message:nil delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] autorelease] show];
 }
 
 - (IBAction)cancel:(id)sender {
