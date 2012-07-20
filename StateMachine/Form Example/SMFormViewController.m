@@ -17,7 +17,7 @@
 #define kLoaderUploadInProgress @"loaderUploadInProgress"
 
 
-@interface SMFormViewController ()
+@interface SMFormViewController () <OAStateMachineDelegate>
 @property (retain, nonatomic) IBOutlet UILabel *formStateLabel;
 @property (retain, nonatomic) IBOutlet UIButton *formSubmitButton;
 @property (retain, nonatomic) IBOutlet UIButton *formCancelButton;
@@ -36,6 +36,7 @@
 @implementation SMFormViewController {
 	OAStateMachine* _formStateMachine;
 	OAStateMachine* _loaderStateMachine;
+	BOOL _formVisible;
 }
 
 @synthesize formStateLabel;
@@ -100,6 +101,7 @@
 {
 	[_formStateMachine   transitionFromState:nil toState:kFormIdle   animated:animated];
 	[_loaderStateMachine transitionFromState:nil toState:kLoaderIdle animated:animated];
+	_formVisible = NO;
 }
 
 
@@ -107,18 +109,33 @@
 
 
 - (IBAction)formSubmit:(id)sender {
+	[_formStateMachine transitionToState:kFormUploading];
+	
 }
 
 - (IBAction)formCancel:(id)sender {
+	[_formStateMachine transitionToState:kFormIdle];
 }
 
 - (IBAction)formTryAgain:(id)sender {
+	[self formSubmit:sender];
 }
 
 - (IBAction)formShow:(id)sender {
+	_formVisible = YES;
+	[formShowHideButton setTitle:@"Hide Form" forState:UIControlStateNormal];
+	[formShowHideButton removeTarget:self action:_cmd forControlEvents:UIControlEventTouchUpInside];
+	[formShowHideButton addTarget:self   action:@selector(formHide:) forControlEvents:UIControlEventTouchUpInside];
+	
+	// If pending error, show it.
+	[_formStateMachine transitionFromState:kFormFailWhenVisible toState:kFormFailed animated:YES];
 }
 
 - (IBAction)formHide:(id)sender {
+	_formVisible = NO;
+	[formShowHideButton setTitle:@"Show Form" forState:UIControlStateNormal];
+	[formShowHideButton removeTarget:self action:_cmd forControlEvents:UIControlEventTouchUpInside];
+	[formShowHideButton addTarget:self   action:@selector(formShow:) forControlEvents:UIControlEventTouchUpInside];
 }
 
 
@@ -128,19 +145,56 @@
 
 - (void) didEnterFormIdleAnimated:(BOOL)animated
 {
-	self.formStateLabel.text = @"Idle";
-	self.formSubmitButton.enabled = YES;
-	self.formCancelButton.enabled = NO;
+	self.formStateLabel.text        = @"Idle";
+	self.formSubmitButton.enabled   = YES;
+	self.formCancelButton.enabled   = NO;
 	self.formTryAgainButton.enabled = NO;
 	self.formShowHideButton.enabled = NO;
+}
+
+- (void) willExitFormIdleAnimated:(BOOL)animated
+{
+	self.formSubmitButton.enabled = NO;
+}
+
+
+
+
+#pragma mark - Form Loader Delegate (called by Loader)
+
+
+- (void) loaderDelegateFailedWithError:(NSString*)error
+{
+	
+}
+
+- (void) loaderDelegateDidFinish:(NSString*)message
+{
+	
 }
 
 
 
 
 
+////////////////////////////////////////////////////////////////////////////
 
-#pragma mark - Loader Events
+
+
+
+
+#pragma mark - Loader API (called by Form)
+
+
+- (void) loaderUpload
+{
+	
+}
+
+
+
+
+#pragma mark - Loader Events (happen internally in a loader)
 
 
 - (IBAction)configLoad:(id)sender {
@@ -162,6 +216,14 @@
 
 #pragma mark - Loader States
 
+
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////
 
 
 
