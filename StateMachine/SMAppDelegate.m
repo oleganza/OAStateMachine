@@ -9,6 +9,7 @@
 #import "SMAppDelegate.h"
 
 #import "SMViewController.h"
+#import "SMFormViewController.h"
 
 @implementation SMAppDelegate
 
@@ -26,7 +27,7 @@
 {
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     // Override point for customization after application launch.
-	self.viewController = [[[SMViewController alloc] initWithNibName:@"SMViewController" bundle:nil] autorelease];
+	self.viewController = [[[SMFormViewController alloc] initWithNibName:nil bundle:nil] autorelease];
 	self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
     return YES;

@@ -16,6 +16,8 @@
 		200683B615AB30B9001F9A45 /* SMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 200683B515AB30B9001F9A45 /* SMViewController.m */; };
 		200683B915AB30B9001F9A45 /* SMViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 200683B715AB30B9001F9A45 /* SMViewController.xib */; };
 		200683C115AB333D001F9A45 /* OAStateMachine.m in Sources */ = {isa = PBXBuildFile; fileRef = 200683C015AB333D001F9A45 /* OAStateMachine.m */; };
+		20C24EEB15B8AF8C00CFAFFF /* SMFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20C24EEA15B8AF8C00CFAFFF /* SMFormViewController.m */; };
+		20C24EED15B8B1C200CFAFFF /* SMFormViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20C24EEC15B8B1C200CFAFFF /* SMFormViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +37,9 @@
 		200683BF15AB333D001F9A45 /* OAStateMachine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAStateMachine.h; sourceTree = "<group>"; };
 		200683C015AB333D001F9A45 /* OAStateMachine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OAStateMachine.m; sourceTree = "<group>"; };
 		202B81DB15B46DEA00D6303B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = SOURCE_ROOT; };
+		20C24EE915B8AF8C00CFAFFF /* SMFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMFormViewController.h; sourceTree = "<group>"; };
+		20C24EEA15B8AF8C00CFAFFF /* SMFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMFormViewController.m; sourceTree = "<group>"; };
+		20C24EEC15B8B1C200CFAFFF /* SMFormViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SMFormViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +94,7 @@
 				200683B415AB30B9001F9A45 /* SMViewController.h */,
 				200683B515AB30B9001F9A45 /* SMViewController.m */,
 				200683B715AB30B9001F9A45 /* SMViewController.xib */,
+				20C24EE715B8AC9100CFAFFF /* Form Example */,
 				200683A915AB30B9001F9A45 /* Supporting Files */,
 			);
 			path = StateMachine;
@@ -103,6 +109,16 @@
 				200683B015AB30B9001F9A45 /* StateMachine-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		20C24EE715B8AC9100CFAFFF /* Form Example */ = {
+			isa = PBXGroup;
+			children = (
+				20C24EE915B8AF8C00CFAFFF /* SMFormViewController.h */,
+				20C24EEA15B8AF8C00CFAFFF /* SMFormViewController.m */,
+				20C24EEC15B8B1C200CFAFFF /* SMFormViewController.xib */,
+			);
+			path = "Form Example";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -158,6 +174,7 @@
 			files = (
 				200683AD15AB30B9001F9A45 /* InfoPlist.strings in Resources */,
 				200683B915AB30B9001F9A45 /* SMViewController.xib in Resources */,
+				20C24EED15B8B1C200CFAFFF /* SMFormViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -172,6 +189,7 @@
 				200683B315AB30B9001F9A45 /* SMAppDelegate.m in Sources */,
 				200683B615AB30B9001F9A45 /* SMViewController.m in Sources */,
 				200683C115AB333D001F9A45 /* OAStateMachine.m in Sources */,
+				20C24EEB15B8AF8C00CFAFFF /* SMFormViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
